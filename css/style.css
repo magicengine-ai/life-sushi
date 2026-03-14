@@ -1,4 +1,4 @@
-/* 苏轼生平网站 - 样式文件 */
+/* 唐宋诗仙网站 - 样式文件 */
 
 * {
     margin: 0;
@@ -7,9 +7,17 @@
 }
 
 :root {
-    --primary-color: #8B4513;
-    --secondary-color: #D2691E;
-    --accent-color: #CD853F;
+    /* 苏轼主题色（棕色系） */
+    --dongpo-primary: #8B4513;
+    --dongpo-secondary: #D2691E;
+    --dongpo-accent: #CD853F;
+    
+    /* 李白主题色（蓝色系） */
+    --libai-primary: #1E3A8A;
+    --libai-secondary: #3B82F6;
+    --libai-accent: #60A5FA;
+    
+    /* 通用色 */
     --bg-color: #FDF5E6;
     --text-color: #333;
     --light-text: #666;
@@ -31,7 +39,7 @@ body {
 
 /* 导航栏 */
 header {
-    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    background: linear-gradient(135deg, var(--dongpo-primary), var(--dongpo-secondary));
     padding: 1rem 0;
     position: sticky;
     top: 0;
@@ -76,10 +84,22 @@ nav {
 
 /* 主视觉区域 */
 .hero {
-    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    background: linear-gradient(135deg, var(--dongpo-primary), var(--dongpo-secondary));
     color: white;
     text-align: center;
     padding: 5rem 20px;
+}
+
+.hero.libai {
+    background: linear-gradient(135deg, var(--libai-primary), var(--libai-secondary));
+}
+
+.hero.dongpo {
+    background: linear-gradient(135deg, var(--dongpo-primary), var(--dongpo-secondary));
+}
+
+.hero.dual {
+    background: linear-gradient(135deg, var(--libai-primary), var(--dongpo-primary));
 }
 
 .hero h1 {
@@ -108,7 +128,7 @@ nav {
 .intro h2 {
     text-align: center;
     font-size: 2.5rem;
-    color: var(--primary-color);
+    color: var(--dongpo-primary);
     margin-bottom: 2rem;
 }
 
@@ -122,7 +142,7 @@ nav {
 
 .quote-box {
     background: var(--bg-color);
-    border-left: 5px solid var(--primary-color);
+    border-left: 5px solid var(--dongpo-primary);
     padding: 2rem;
     margin: 3rem auto;
     max-width: 700px;
@@ -132,7 +152,7 @@ nav {
 .quote-box blockquote {
     font-size: 1.3rem;
     font-style: italic;
-    color: var(--primary-color);
+    color: var(--dongpo-primary);
     margin-bottom: 1rem;
 }
 
@@ -150,7 +170,7 @@ nav {
 .highlights h2 {
     text-align: center;
     font-size: 2.5rem;
-    color: var(--primary-color);
+    color: var(--dongpo-primary);
     margin-bottom: 3rem;
 }
 
@@ -179,7 +199,7 @@ nav {
 }
 
 .card h3 {
-    color: var(--primary-color);
+    color: var(--dongpo-primary);
     margin-bottom: 1rem;
 }
 
@@ -189,7 +209,7 @@ nav {
 
 /* CTA 区域 */
 .cta {
-    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    background: linear-gradient(135deg, var(--dongpo-primary), var(--dongpo-secondary));
     color: white;
     text-align: center;
     padding: 4rem 20px;
@@ -209,7 +229,7 @@ nav {
 .btn {
     display: inline-block;
     background: white;
-    color: var(--primary-color);
+    color: var(--dongpo-primary);
     padding: 1rem 2rem;
     border-radius: 30px;
     text-decoration: none;
@@ -224,7 +244,7 @@ nav {
 
 /* 页脚 */
 footer {
-    background: var(--primary-color);
+    background: var(--dongpo-primary);
     color: white;
     text-align: center;
     padding: 2rem 0;
@@ -232,10 +252,18 @@ footer {
 
 /* 页面头部 */
 .page-header {
-    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    background: linear-gradient(135deg, var(--dongpo-primary), var(--dongpo-secondary));
     color: white;
     text-align: center;
     padding: 3rem 20px;
+}
+
+.page-header.libai {
+    background: linear-gradient(135deg, var(--libai-primary), var(--libai-secondary));
+}
+
+.page-header.dongpo {
+    background: linear-gradient(135deg, var(--dongpo-primary), var(--dongpo-secondary));
 }
 
 .page-header h1 {
@@ -275,7 +303,7 @@ footer {
 }
 
 .timeline-year {
-    background: var(--primary-color);
+    background: var(--dongpo-primary);
     color: white;
     padding: 0.5rem 1rem;
     border-radius: 5px;
@@ -283,6 +311,10 @@ footer {
     min-width: 80px;
     text-align: center;
     height: fit-content;
+}
+
+.timeline-year.libai-bg {
+    background: var(--libai-primary);
 }
 
 .timeline-content {
@@ -294,16 +326,20 @@ footer {
 }
 
 .timeline-content h3 {
-    color: var(--primary-color);
+    color: var(--dongpo-primary);
     margin-bottom: 0.5rem;
 }
 
 .timeline-item.highlight .timeline-year {
-    background: var(--secondary-color);
+    background: var(--dongpo-secondary);
 }
 
 .timeline-item.highlight .timeline-content {
-    border-left: 5px solid var(--secondary-color);
+    border-left: 5px solid var(--dongpo-secondary);
+}
+
+.timeline-item.highlight .timeline-year.libai-bg {
+    background: var(--libai-secondary);
 }
 
 /* 作品框样式 */
@@ -316,11 +352,15 @@ footer {
 }
 
 .work-box h4 {
-    color: var(--primary-color);
+    color: var(--dongpo-primary);
     font-size: 1.1rem;
     margin-bottom: 1rem;
     padding-bottom: 0.5rem;
     border-bottom: 2px solid var(--border-color);
+}
+
+.work-box.libai-style h4 {
+    color: var(--libai-primary);
 }
 
 .work-item {
@@ -336,10 +376,14 @@ footer {
 }
 
 .work-item strong {
-    color: var(--secondary-color);
+    color: var(--dongpo-secondary);
     font-size: 1.05rem;
     display: block;
     margin-bottom: 0.5rem;
+}
+
+.work-box.libai-style .work-item strong {
+    color: var(--libai-secondary);
 }
 
 .work-item p {
@@ -350,7 +394,406 @@ footer {
 
 .work-item p strong {
     display: inline;
-    color: var(--primary-color);
+    color: var(--dongpo-primary);
+}
+
+.work-box.libai-style .work-item p strong {
+    color: var(--libai-primary);
+}
+
+/* 双诗人卡片 */
+.dual-intro {
+    padding: 4rem 0;
+    background: white;
+}
+
+.dual-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    gap: 3rem;
+}
+
+.dual-card {
+    background: var(--bg-color);
+    padding: 2.5rem;
+    border-radius: 15px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+    text-align: center;
+    transition: transform 0.3s ease;
+}
+
+.dual-card:hover {
+    transform: translateY(-10px);
+}
+
+.dual-card.libai {
+    border-top: 5px solid var(--libai-primary);
+}
+
+.dual-card.dongpo {
+    border-top: 5px solid var(--dongpo-primary);
+}
+
+.dual-icon {
+    font-size: 4rem;
+    margin-bottom: 1rem;
+}
+
+.dual-card h3 {
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+}
+
+.dual-card.libai h3 {
+    color: var(--libai-primary);
+}
+
+.dual-card.dongpo h3 {
+    color: var(--dongpo-primary);
+}
+
+.dual-dates {
+    color: var(--light-text);
+    font-size: 1.1rem;
+    margin-bottom: 0.5rem;
+}
+
+.dual-title {
+    color: var(--secondary-color);
+    font-style: italic;
+    margin-bottom: 1.5rem;
+}
+
+.dual-desc {
+    color: var(--light-text);
+    line-height: 1.8;
+    margin-bottom: 1.5rem;
+}
+
+.dual-features {
+    list-style: none;
+    text-align: left;
+    margin-bottom: 2rem;
+}
+
+.dual-features li {
+    padding: 0.5rem 0;
+    color: var(--text-color);
+    border-bottom: 1px dashed var(--border-color);
+}
+
+.dual-features li:last-child {
+    border-bottom: none;
+}
+
+/* 对比预览 */
+.comparison-preview {
+    padding: 4rem 0;
+}
+
+.comparison-preview h2 {
+    text-align: center;
+    font-size: 2.5rem;
+    color: var(--dongpo-primary);
+    margin-bottom: 3rem;
+}
+
+.comparison-table {
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 3px 15px rgba(0,0,0,0.1);
+    overflow: hidden;
+    margin-bottom: 2rem;
+}
+
+.comparison-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.comparison-row:last-child {
+    border-bottom: none;
+}
+
+.comparison-label {
+    background: var(--bg-color);
+    padding: 1.5rem;
+    font-weight: bold;
+    color: var(--text-color);
+    border-right: 1px solid var(--border-color);
+}
+
+.comparison-item {
+    padding: 1.5rem;
+    color: var(--light-text);
+}
+
+.comparison-item.libai {
+    border-left: 3px solid var(--libai-primary);
+}
+
+.comparison-item.dongpo {
+    border-left: 3px solid var(--dongpo-primary);
+}
+
+.comparison-item.both {
+    grid-column: 2 / span 2;
+    text-align: center;
+    color: var(--secondary-color);
+    font-weight: bold;
+}
+
+.center-btn {
+    text-align: center;
+    margin-top: 2rem;
+}
+
+/* 名句展示 */
+.famous-quotes {
+    padding: 4rem 0;
+    background: white;
+}
+
+.famous-quotes h2 {
+    text-align: center;
+    font-size: 2.5rem;
+    color: var(--dongpo-primary);
+    margin-bottom: 3rem;
+}
+
+.quotes-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.quote-card {
+    background: var(--bg-color);
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+}
+
+.quote-card.libai {
+    border-left: 5px solid var(--libai-primary);
+}
+
+.quote-card.dongpo {
+    border-left: 5px solid var(--dongpo-primary);
+}
+
+.quote-card blockquote {
+    font-size: 1.2rem;
+    font-style: italic;
+    margin-bottom: 1rem;
+    line-height: 1.6;
+}
+
+.quote-card.libai blockquote {
+    color: var(--libai-primary);
+}
+
+.quote-card.dongpo blockquote {
+    color: var(--dongpo-primary);
+}
+
+.quote-card cite {
+    display: block;
+    text-align: right;
+    color: var(--light-text);
+}
+
+/* 对比页面样式 */
+.comparison-section {
+    padding: 4rem 0;
+}
+
+.comparison-intro {
+    background: white;
+    padding: 2rem;
+    border-radius: 10px;
+    margin-bottom: 3rem;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+}
+
+.comparison-intro p {
+    font-size: 1.1rem;
+    line-height: 2;
+    color: var(--light-text);
+}
+
+.comparison-table-full {
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 3px 15px rgba(0,0,0,0.1);
+    overflow: hidden;
+    margin-bottom: 4rem;
+}
+
+.comparison-row-header {
+    display: grid;
+    grid-template-columns: 1.5fr 2fr 2fr;
+    background: var(--bg-color);
+}
+
+.comparison-cell {
+    padding: 1.5rem;
+    font-weight: bold;
+    text-align: center;
+}
+
+.libai-header {
+    background: var(--libai-primary);
+    color: white;
+}
+
+.dongpo-header {
+    background: var(--dongpo-primary);
+    color: white;
+}
+
+.comparison-row-header .comparison-cell:first-child {
+    background: var(--text-color);
+    color: white;
+}
+
+.comparison-row {
+    display: grid;
+    grid-template-columns: 1.5fr 2fr 2fr;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.comparison-row:last-child {
+    border-bottom: none;
+}
+
+.comparison-label {
+    padding: 1.5rem;
+    font-weight: bold;
+    background: var(--bg-color);
+    color: var(--text-color);
+    border-right: 1px solid var(--border-color);
+}
+
+.comparison-item {
+    padding: 1.5rem;
+    color: var(--light-text);
+    line-height: 1.8;
+}
+
+.comparison-item.libai {
+    background: rgba(59, 130, 246, 0.05);
+}
+
+.comparison-item.dongpo {
+    background: rgba(210, 105, 30, 0.05);
+}
+
+/* 共同点部分 */
+.similarities-section {
+    padding: 4rem 0;
+    background: white;
+}
+
+.similarities-section h2 {
+    text-align: center;
+    font-size: 2.5rem;
+    color: var(--dongpo-primary);
+    margin-bottom: 3rem;
+}
+
+.similarities-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+}
+
+.similarity-card {
+    background: var(--bg-color);
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+    text-align: center;
+}
+
+.similarity-icon {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+}
+
+.similarity-card h3 {
+    color: var(--dongpo-primary);
+    margin-bottom: 1rem;
+}
+
+.similarity-card p {
+    color: var(--light-text);
+    line-height: 1.8;
+}
+
+/* 名句对比 */
+.famous-quotes-comparison {
+    padding: 4rem 0;
+}
+
+.famous-quotes-comparison h2 {
+    text-align: center;
+    font-size: 2.5rem;
+    color: var(--dongpo-primary);
+    margin-bottom: 3rem;
+}
+
+.quotes-comparison-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+    gap: 2rem;
+}
+
+.quote-pair {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+    background: white;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+}
+
+.quote-libai, .quote-dongpo {
+    padding: 2rem;
+}
+
+.quote-libai {
+    background: rgba(59, 130, 246, 0.05);
+    border-right: 3px solid var(--libai-primary);
+}
+
+.quote-dongpo {
+    background: rgba(210, 105, 30, 0.05);
+    border-left: 3px solid var(--dongpo-primary);
+}
+
+.quote-libai blockquote, .quote-dongpo blockquote {
+    font-size: 1.1rem;
+    font-style: italic;
+    margin-bottom: 1rem;
+    line-height: 1.6;
+}
+
+.quote-libai blockquote {
+    color: var(--libai-primary);
+}
+
+.quote-dongpo blockquote {
+    color: var(--dongpo-primary);
+}
+
+.quote-libai cite, .quote-dongpo cite {
+    display: block;
+    text-align: right;
+    color: var(--light-text);
+    font-size: 0.95rem;
 }
 
 /* 作品页面样式 */
@@ -364,7 +807,7 @@ footer {
 
 .works-category h2 {
     font-size: 2rem;
-    color: var(--primary-color);
+    color: var(--dongpo-primary);
     margin-bottom: 2rem;
     padding-bottom: 0.5rem;
     border-bottom: 3px solid var(--border-color);
@@ -384,13 +827,13 @@ footer {
 }
 
 .work-card h3 {
-    color: var(--primary-color);
+    color: var(--dongpo-primary);
     margin-bottom: 0.5rem;
     font-size: 1.3rem;
 }
 
 .work-period {
-    color: var(--secondary-color);
+    color: var(--dongpo-secondary);
     font-size: 0.9rem;
     margin-bottom: 1rem;
 }
@@ -402,7 +845,7 @@ footer {
     overflow-x: auto;
     font-size: 0.95rem;
     line-height: 1.6;
-    border-left: 3px solid var(--primary-color);
+    border-left: 3px solid var(--dongpo-primary);
 }
 
 .work-desc {
@@ -413,9 +856,9 @@ footer {
 .work-card blockquote {
     background: var(--bg-color);
     padding: 1rem;
-    border-left: 3px solid var(--primary-color);
+    border-left: 3px solid var(--dongpo-primary);
     font-style: italic;
-    color: var(--primary-color);
+    color: var(--dongpo-primary);
 }
 
 /* 评价页面样式 */
@@ -434,7 +877,7 @@ footer {
 
 .quote-highlight blockquote {
     font-size: 1.8rem;
-    color: var(--primary-color);
+    color: var(--dongpo-primary);
     margin-bottom: 1rem;
     line-height: 1.6;
 }
@@ -459,7 +902,7 @@ footer {
 }
 
 .evaluation-card h3 {
-    color: var(--primary-color);
+    color: var(--dongpo-primary);
     margin-bottom: 1rem;
     font-size: 1.3rem;
 }
@@ -475,7 +918,7 @@ footer {
 
 .historical-comments h2 {
     font-size: 2rem;
-    color: var(--primary-color);
+    color: var(--dongpo-primary);
     margin-bottom: 2rem;
     text-align: center;
 }
@@ -489,7 +932,7 @@ footer {
 }
 
 .comment-source {
-    color: var(--secondary-color);
+    color: var(--dongpo-secondary);
     font-weight: bold;
     margin-bottom: 0.5rem;
 }
@@ -501,7 +944,7 @@ footer {
 
 .legacy-section h2 {
     font-size: 2rem;
-    color: var(--primary-color);
+    color: var(--dongpo-primary);
     margin-bottom: 2rem;
     text-align: center;
 }
@@ -521,7 +964,7 @@ footer {
 }
 
 .legacy-item h4 {
-    color: var(--primary-color);
+    color: var(--dongpo-primary);
     margin-bottom: 0.5rem;
 }
 
