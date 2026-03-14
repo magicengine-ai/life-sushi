@@ -965,6 +965,47 @@ footer {
     color: var(--dongpo-primary);
 }
 
+/* 苏轼模态框主题 */
+.dongpo-modal {
+    background: linear-gradient(135deg, var(--dongpo-primary), var(--dongpo-secondary)) !important;
+}
+
+.timeline .modal-content-text {
+    border-left-color: var(--dongpo-primary);
+}
+
+.timeline .modal-section h3 {
+    color: var(--dongpo-primary);
+    border-bottom-color: var(--dongpo-accent);
+}
+
+/* 作品链接样式 */
+.work-item strong a {
+    color: inherit;
+    text-decoration: none;
+    border-bottom: 2px solid transparent;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.work-box.libai-style .work-item strong a {
+    color: inherit;
+}
+
+.work-box .work-item strong a:hover {
+    color: var(--libai-secondary);
+    border-bottom-color: var(--libai-secondary);
+}
+
+.work-box .work-item strong a {
+    color: var(--dongpo-secondary);
+}
+
+.work-box .work-item strong a:hover {
+    color: var(--dongpo-primary);
+    border-bottom-color: var(--dongpo-primary);
+}
+
 /* 作品页面样式 */
 .works-section {
     padding: 4rem 0;
