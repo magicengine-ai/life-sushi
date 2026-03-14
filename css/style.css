@@ -986,6 +986,8 @@ footer {
     border-bottom: 2px solid transparent;
     transition: all 0.3s ease;
     cursor: pointer;
+    display: inline-block;
+    pointer-events: auto !important;
 }
 
 .work-box.libai-style .work-item strong a {
@@ -997,13 +999,15 @@ footer {
     border-bottom-color: var(--libai-secondary);
 }
 
-.work-box .work-item strong a {
+.work-box:not(.libai-style) .work-item strong a {
     color: var(--dongpo-secondary);
+    font-weight: bold;
 }
 
-.work-box .work-item strong a:hover {
+.work-box:not(.libai-style) .work-item strong a:hover {
     color: var(--dongpo-primary);
     border-bottom-color: var(--dongpo-primary);
+    text-decoration: underline;
 }
 
 /* 作品页面样式 */
