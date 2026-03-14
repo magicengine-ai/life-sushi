@@ -363,6 +363,10 @@ footer {
     color: var(--libai-primary);
 }
 
+.work-box:not(.libai-style) h4 {
+    color: var(--dongpo-primary);
+}
+
 .work-item {
     margin-bottom: 1.5rem;
     padding-bottom: 1.5rem;
@@ -384,6 +388,10 @@ footer {
 
 .work-box.libai-style .work-item strong {
     color: var(--libai-secondary);
+}
+
+.work-box:not(.libai-style) .work-item strong {
+    color: var(--dongpo-secondary);
 }
 
 .work-item p {
@@ -965,49 +973,80 @@ footer {
     color: var(--dongpo-primary);
 }
 
-/* 苏轼模态框主题 */
+/* 模态框主题 - 李白 */
+.libai-modal {
+    background: linear-gradient(135deg, var(--libai-primary), var(--libai-secondary)) !important;
+}
+
+/* 模态框主题 - 苏轼 */
 .dongpo-modal {
     background: linear-gradient(135deg, var(--dongpo-primary), var(--dongpo-secondary)) !important;
 }
 
+/* 时间线模态框通用样式 */
 .timeline .modal-content-text {
+    border-left-width: 5px;
+    border-left-style: solid;
+}
+
+.libai-modal + .modal-content .modal-content-text,
+.modal-header.libai-modal ~ .modal-section .modal-content-text {
+    border-left-color: var(--libai-primary);
+}
+
+.dongpo-modal + .modal-content .modal-content-text,
+.modal-header.dongpo-modal ~ .modal-section .modal-content-text {
     border-left-color: var(--dongpo-primary);
 }
 
 .timeline .modal-section h3 {
+    font-size: 1.5rem;
+    padding-bottom: 0.5rem;
+    border-bottom-width: 3px;
+    border-bottom-style: solid;
+    display: inline-block;
+}
+
+.libai-modal ~ .modal-section h3 {
+    color: var(--libai-primary);
+    border-bottom-color: var(--libai-accent);
+}
+
+.dongpo-modal ~ .modal-section h3 {
     color: var(--dongpo-primary);
     border-bottom-color: var(--dongpo-accent);
 }
 
-/* 作品链接样式 */
-.work-item strong a {
-    color: inherit;
+/* 作品链接样式 - 李白 */
+.work-box.libai-style .work-item strong a {
+    color: var(--libai-secondary);
     text-decoration: none;
     border-bottom: 2px solid transparent;
     transition: all 0.3s ease;
     cursor: pointer;
     display: inline-block;
-    pointer-events: auto !important;
+    font-weight: bold;
 }
 
-.work-box.libai-style .work-item strong a {
-    color: inherit;
+.work-box.libai-style .work-item strong a:hover {
+    color: var(--libai-primary);
+    border-bottom-color: var(--libai-primary);
 }
 
-.work-box .work-item strong a:hover {
-    color: var(--libai-secondary);
-    border-bottom-color: var(--libai-secondary);
-}
-
+/* 作品链接样式 - 苏轼 */
 .work-box:not(.libai-style) .work-item strong a {
     color: var(--dongpo-secondary);
+    text-decoration: none;
+    border-bottom: 2px solid transparent;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    display: inline-block;
     font-weight: bold;
 }
 
 .work-box:not(.libai-style) .work-item strong a:hover {
     color: var(--dongpo-primary);
     border-bottom-color: var(--dongpo-primary);
-    text-decoration: underline;
 }
 
 /* 作品页面样式 */
